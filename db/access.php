@@ -26,38 +26,36 @@ defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
 
-    'block/era_admin:myaddinstance' => array(
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_SYSTEM,
-        'archetypes' => array(
-            'guest' => CAP_PREVENT,
-            'student' => CAP_PREVENT,
-            'teacher' => CAP_PREVENT,
-            'editingteacher' => CAP_PREVENT,
-            'coursecreator' => CAP_PREVENT,
-            'manager' => CAP_ALLOW
+'block/era_admin:myaddinstance' => array
+(
+  'captype' => 'write',
+  'contextlevel'  => CONTEXT_SYSTEM,
+  'archetypes'    => array
+  (
+    'guest'          => CAP_PREVENT,
+    'student'        => CAP_PREVENT,
+    'teacher'        => CAP_PREVENT,
+    'editingteacher' => CAP_PREVENT,
+    'coursecreator'  => CAP_PREVENT,
+    'manager'        => CAP_ALLOW
+  ),
+  'clonepermissionsfrom' => 'moodle/my:manageblocks'
+),
 
-        ),
-
-        'clonepermissionsfrom' => 'moodle/my:manageblocks'
-    ),
-
-
-    'block/era_admin:addinstance' => array(
-        'riskbitmask' => RISK_SPAM | RISK_XSS,
-
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_BLOCK,
-        'archetypes' => array(
-            'guest' => CAP_PREVENT,
-            'student' => CAP_PREVENT,
-            'teacher' => CAP_PREVENT,
-            'editingteacher' => CAP_PREVENT,
-            'coursecreator' => CAP_PREVENT,
-            'manager' => CAP_ALLOW
-
-        ),
-
-        'clonepermissionsfrom' => 'moodle/site:manageblocks'
-    ),
+'block/era_admin:addinstance' => array
+(
+  'riskbitmask'      => RISK_SPAM | RISK_XSS,
+  'captype'          => 'write',
+  'contextlevel'     => CONTEXT_BLOCK,
+  'archetypes'       => array
+  (
+    'guest'          => CAP_PREVENT,
+    'student'        => CAP_PREVENT,
+    'teacher'        => CAP_PREVENT,
+    'editingteacher' => CAP_PREVENT,
+    'coursecreator'  => CAP_PREVENT,
+    'manager'        => CAP_ALLOW
+   ),
+'clonepermissionsfrom' => 'moodle/site:manageblocks'
+),
 );
