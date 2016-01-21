@@ -1,6 +1,0 @@
-<?php
-$string['pluginname'] = 'Lernraum Anfrage Admin';
-$string['lradmin:addinstance'] = 'Block LIST IT ADMIN ';
-$string['lradmin:myaddinstance'] = 'Block LIST IT ADMIN in My home';
-
-
