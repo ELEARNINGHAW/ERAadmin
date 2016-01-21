@@ -58,38 +58,5 @@ $capabilities = array(
    ),
 'clonepermissionsfrom' => 'moodle/site:manageblocks'
 ),
-    'block/lradmin:myaddinstance' => array(
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_SYSTEM,
-        'archetypes' => array(
-            'guest' => CAP_PREVENT,
-            'student' => CAP_PREVENT,
-            'teacher' => CAP_PREVENT,
-            'editingteacher' => CAP_PREVENT,
-            'coursecreator' => CAP_PREVENT,
-            'manager' => CAP_ALLOW
-
-        ),
-
-        'clonepermissionsfrom' => 'moodle/my:manageblocks'
-    ),
-
-
-    'block/lradmin:addinstance' => array(
-        'riskbitmask' => RISK_SPAM | RISK_XSS,
-
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_BLOCK,
-        'archetypes' => array(
-            'guest' => CAP_PREVENT,
-            'student' => CAP_PREVENT,
-            'teacher' => CAP_PREVENT,
-            'editingteacher' => CAP_PREVENT,
-            'coursecreator' => CAP_PREVENT,
-            'manager' => CAP_ALLOW
-
-        ),
-
-        'clonepermissionsfrom' => 'moodle/site:manageblocks'
-    ),
+   
 );
