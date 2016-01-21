@@ -12,8 +12,10 @@ class block_era_admin  extends block_base
      { 
        $this->title = get_string('pluginname', 'block_era_admin');      
            
-      $srvpath = 'http://lernserver.el.haw-hamburg.de/haw/er_anfrage.NEW/index.php';    // Live-Server
-      #$srvpath = 'http://localhost/haw/er_anfrage/index.php';                        // Dev-Server 
+       if   ( isset( $_SERVER[ 'SERVER_NAME' ] ) AND ( $_SERVER[ 'SERVER_NAME' ] )   == 'localhost' )   
+            { $this->srvpath = 'http://localhost/haw/ERanfrageAPP/index.php';                       /* Dev-Server */   }  
+       else { $this->srvpath = 'http://lernserver.el.haw-hamburg.de/haw/ERanfrageAPP/index.php';    /* Live-Server */  }   
+       
 
  $idm ="?uun=" .rawurlencode( base64_encode( $USER->username    ))	
       ."&ufn=" .rawurlencode( base64_encode( $USER->firstname   ))  
@@ -30,7 +32,7 @@ class block_era_admin  extends block_base
       ."&csn=" .rawurlencode( base64_encode( $COURSE->shortname )) 		
       ."&x=9"
       ;
-	 $contentA = "<div style=\" height :20px; border:thin #CCC solid; text-align:center;vertical-align: middle; padding:6px; \"><a target=\"_blank\" href=".$srvpath.$idm."> ADMIN TOOL </a></div>";
+	 $contentA = "<div style=\" height :20px; border:thin #CCC solid; text-align:center;vertical-align: middle; padding:6px; \"><a target=\"_blank\" href=".$this->srvpath.$idm."> ADMIN TOOL </a></div>";
     
      if ($this->content !== NULL) 
       {        
